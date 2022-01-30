@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel='stylesheet' href='/stylesheets/style.css'>
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <ul>
+        <li>
+          <a href="/catalog">Home</a>
+        </li>
+        <li>
+          <a href="/catalog/books">All Books</a>
+        </li>
+        <li>
+          <a href="/catalog/authors">All Authors</a>
+        </li>
+        <li>
+          <a href="/catalog/genres">All Genres</a>
+        </li>
+        <li>
+          <a href="/catalog/bookinstances">All book-instances</a>
+        </li>
+
+        <br />
+
+        <li>
+          <a href="/catalog/author/create">Create New Author</a>
+        </li>
+        <li>
+          <a href="/catalog/genre/create">Create New Genre</a>
+        </li>
+        <li>
+          <a href="/catalog/book/create">Create New Book</a>
+        </li>
+        <li>
+          <a href="/catalog/bookinstance/create">Create New Book Instance</a>
+        </li>
+      </ul>
+    </div>
+    {% block content %}
+    {% endblock content %}
+  </body>
+</html>
