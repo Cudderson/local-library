@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+  <h1>ID: {{ bookinstance._id }}</h1>
+
+  <p>
+    <strong>Title:</strong>
+    <a> {{ bookinstance.book.title }}</a>
+  </p>
+
+  <p>
+    <strong>Imprint:</strong>
+    {{ bookinstance.imprint }}
+  </p>
+
+  {% if bookinstance.status === 'Available' %}
+    <p class="available">{{ bookinstance.status }}</p>
+  {% elif bookinstance.status === 'Maintenance' %}
+    <p class="maintenance">{{ bookinstance.status }}</p>
+  {% else %}
+    <p class="unavailable">{{ bookinstance.status }}</p>
+  {% endif %}
+  
+  {% if bookinstance.status != 'Available' %}
+    <p>
+      <strong>Due Back: </strong>
+      {{ bookinstance.due_back_formatted }}
+    </p>
+  {% endif %}
+
+{% endblock content %}
