@@ -17,7 +17,7 @@
           <span class='unavailable'>{{ val.status }}</span>
         {% endif %}
         {% if val.status != 'Available' %}
-          <span>Due: {{ val.due_back }}</span>
+          <span>Due Back: {{ val.due_back_formatted }}</span>
         {% endif %}
       </li>
     {% else %}
