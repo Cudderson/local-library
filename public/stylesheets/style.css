@@ -9,3 +9,15 @@ body {
 h1 {
   color: gold;
 }
+
+.available {
+  color: lightgreen;
+}
+
+.maintenance {
+  color: gold;
+}
+
+.unavailable {
+  color: darkred;
+}
