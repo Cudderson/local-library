@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+  <h1>Title: {{ book.title }}</h1>
+
+  <p>
+    <strong>Author: </strong>
+    <a href={{book.author.url}}>{{ book.author.name }}</a>
+  </p>
+  <p>
+    <strong>Summary: </strong>
+    {{ book.summary }}
+  </p>
+  <p>
+    <strong>IBSN: </strong>
+    <span>{{ book.ibsn }}</span>
+    <p><strong>Genre: </strong>
+      {% for val in book.genre %}
+        <a href={{val.url}}>{{ val.name }}</a>
+        {% if not loop.last %}
+          <span>, </span>
+        {% endif %}
+      {% endfor %}
+    </p>
+  </p>
+  <h4>Copies</h4>
+
+  {% for val in book_instances %}
+
+    {% if val.status === 'Available' %}
+      <p class="available">{{ val.status }}</p>
+    {% elif val.status === 'Maintenance' %}
+      <p class="maintenance">{{ val.status }}</p>
+    {% else %}
+      <p class="unavailable">{{ val.status }}</p>
+    {% endif %}
+    
+    {% if val.status != 'Available' %}
+      <p><strong>Due Back: </strong>{{ val.due_back }}</p>
+    {% endif %}
+
+    <p><strong>ID: </strong>{{ val.id }}</p>
+  {% else %}
+    <p>There are no copies of this book in the library.</p>
+  {% endfor %}
+
+{% endblock content %}
