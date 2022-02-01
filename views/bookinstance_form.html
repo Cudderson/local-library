@@ -1,0 +1,88 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+  <h1>{{ title }}</h1>
+  <form method='post' action=''>
+    <div>
+      <label for='book'>Book:</label>
+      <select
+        type='select'
+        placeholder='Select Book'
+        name='book'
+        required='true'
+      >
+        {% for book in book_list %}
+          {% if bookinstance %}
+            <option
+              value={{book._id}}
+              {% if bookinstance.book.toString() === book._id.toString() %}
+                selected='selected'
+              {% else %}
+                selected='false'
+              {% endif %}
+            >
+              {{ book.title }}
+            </option>
+          {% else %}
+            <option
+              value={{book._id}}
+            >
+              {{ book.title }}
+            </option>
+          {% endif %}
+        {% endfor %}
+      </select>
+    </div>
+    <div>
+      <label for='imprint'>Imprint</label>
+      <input
+        type='text'
+        placeholder='Publisher and Date Information'
+        name='imprint'
+        required='true'
+        {% if bookinstance === undefined %}
+          value=''
+        {% else %}
+          value={{bookinstance.imprint}}
+        {% endif %}
+      >
+    </div>
+    <div>
+      <label for='due_back'>Date when book available:</label>
+      <input
+        type='date'
+        name='due_back'
+        {% if bookinstance === undefined %}
+          value=''
+        {% else %}
+          value={{bookinstance.due_back}}
+        {% endif %}
+      >
+    </div>
+    <div>
+      <label for='status'>Status:</label>
+      <select
+        type='select'
+        placeholder='Select Status'
+        name='status'
+        required='true'
+      >
+        <option value='Maintenance'>Maintenance</option>
+        <option value='Available'>Available</option>
+        <option value='Loaned'>Loaned</option>
+        <option value='Reserved'>Reserved</option>
+      </select>
+    </div>
+    <button type='submit'>Submit</button>
+  </form>
+
+  {% if errors %}
+    <ul>
+      {% for error in errors %}
+        <li>{{ error.msg }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+{% endblock content %}

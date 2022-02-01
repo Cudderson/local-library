@@ -13,8 +13,8 @@
     {{ book.summary }}
   </p>
   <p>
-    <strong>IBSN: </strong>
-    <span>{{ book.ibsn }}</span>
+    <strong>ISBN: </strong>
+    <span>{{ book.isbn }}</span>
     <p><strong>Genre: </strong>
       {% for val in book.genre %}
         <a href={{val.url}}>{{ val.name }}</a>
