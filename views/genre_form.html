@@ -1,0 +1,31 @@
+{% extends 'layout.html' %} {% block content %}
+
+  <h1>{{ title }}</h1>
+
+  <form method="post" action="">
+    <div>
+      <label for="name">Genre:</label>
+      <input
+        type='text'
+        placeholder="Fantasy, Poetry, etc."
+        name='name'
+        {% if genre == undefined %}
+          value=''
+        {% else %}
+          value={{genre.name}}
+        {% endif %}
+        required='true'
+      >
+    </div>
+    <button type='submit'>Submit</button>
+  </form>
+
+  {% if errors %}
+    <ul>
+      {% for error in errors %}
+        <li>{{ error.msg }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+{% endblock content %}
