@@ -1,0 +1,66 @@
+{% extends 'layout.html' %} 
+
+{% block content %}
+
+  <h1>{{ title }}</h1>
+  <form method="post" action="">
+    <div>
+      <label for="first_name">First Name:</label>
+      <input
+        type="text"
+        placeholder="Isaac"
+        required="true"
+        name="first_name"
+        {% if author == undefined %}
+          value=''
+        {% else %}
+          value={{author.first_name}}
+        {% endif %}
+      />
+      <label for='family_name' >Family Name:</label>
+      <input 
+        type='text'
+        placeholder="Asimov"
+        required='true'
+        name='family_name'
+        {% if author == undefined %}
+          value=''
+        {% else %}
+          value={{author.family_name}}
+        {% endif %}
+      />
+    </div>
+    <div>
+      <label for='date_of_birth'>Date of Birth:</label>
+      <input
+        type='date'
+        name='date_of_birth'
+        {% if author == undefined %}
+          value=''
+        {% else %}
+          value={{author.date_of_birth}}
+        {% endif %}
+      />
+      <label for='date_of_death'>Date of Death:</label>
+      <input
+        type='date'
+        name='date_of_death'
+        {% if author == undefined %}
+          value=''
+        {% else %}
+          value={{author.date_of_death}}
+        {% endif %}
+      />
+    </div>
+    <button type='submit'>Submit</button>
+  </form>
+
+  {% if errors %}
+    <ul>
+      {% for error in errors %}
+        <li>{{ error.msg }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+{% endblock content %}
