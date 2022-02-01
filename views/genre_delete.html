@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+  <h1>{{ title }}</h1>
+  {% if genre_books.length > 0 %}
+    <p><strong>Delete the following books before attempting to delete this genre:</strong></p>
+    <h4>Books</h4>
+    {% for book in genre_books %}
+      <a href="{{book.url}}">{{ book.title }}</a>
+      <p>{{ book.summary }}</p>
+    {% endfor %}
+  {% else %}
+    <p>Are you sure you want to delete this genre?</p>
+    <form method='post' action=''> 
+      <div>
+        <input
+          type='hidden'
+          name='id'
+          required='true'
+          value="{{genre.id}}"
+        />
+      </div>
+      <button type='submit'>Delete Genre</button>
+    </form>
+  {% endif %}
+{% endblock content %}
