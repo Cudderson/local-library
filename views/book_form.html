@@ -15,7 +15,7 @@
         {% if book == undefined %}
           value=''
         {% else %}
-          value={{book.title}}
+          value="{{book.title}}"
         {% endif %}
       />
     </div>
@@ -31,7 +31,7 @@
           {% if book %}
             <option
               value={{author._id}}
-              {% if author._id.toString() === book.author._id.toString() %}
+              {% if (author._id.toString() === book.author._id) or (author._id.toString() == book.author) %}
                 selected='selected'
               {% else %}
                 selected='false'
@@ -82,11 +82,11 @@
           <input
             type='checkbox'
             name='genre'
-            id={{genre.id}}
-            value={{genre.id}}
-            checked={{genre.checked}}
+            id="{{genre.id}}"
+            value="{{genre.id}}"
+            checked="{{genre.checked}}"
           />
-          <label for={{genre.id}}>{{ genre.name }}</label>
+          <label for="{{genre.id}}">{{ genre.name }}</label>
         </div>
       {% endfor %}
     </div>
