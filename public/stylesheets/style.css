@@ -2,11 +2,30 @@
   box-sizing: border-box;
 }
 
+:root {
+  --dark-blue: rgb(66, 109, 158);
+  --dark-tan: rgb(186, 146, 75);
+}
+
 body {
-  background-color: rgba(50, 50, 50, .5);
+  /* background-color: rgb(186, 146, 75); */
+  background-color: var(--dark-tan);
+  font-family: "Roboto", sans-serif;
+}
+
+.content-container {
+  margin: 0 auto;
+  border: 2px solid darkblue;
+  border-radius: 8px;
+  padding: 1rem 2rem;
+  width: 96%;
+  max-width: 1200px;
+  background-color: var(--dark-blue);
 }
 
 h1 {
+  font-family: "Lora", serif;
+  font-weight: 400;
   color: gold;
 }
 
