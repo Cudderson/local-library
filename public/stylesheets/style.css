@@ -3,7 +3,9 @@
 }
 
 :root {
+  --light-blue: rgb(42, 137, 181);
   --dark-blue: rgb(66, 109, 158);
+  --light-tan: rgb(192, 162, 110);
   --dark-tan: rgb(186, 146, 75);
 }
 
