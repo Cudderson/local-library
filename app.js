@@ -22,11 +22,6 @@ var db = mongoose.connection;
 // bind connection to error event to view errors
 db.on('error', console.error.bind(console, "MongoDb connection error"));
 
-// set default express engine and extension
-// It works without this, saving just in case
-// app.engine('html', nunjucks.render);
-// app.set('view engine', 'html');
-
 // configure nunjucks
 nunjucks.configure('views', {
   autoescape: true,

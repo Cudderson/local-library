@@ -10,7 +10,6 @@
 }
 
 body {
-  /* background-color: gainsboro; */
   background-color: var(--dark-blue);
   font-family: "Roboto", sans-serif;
   padding: 0;
@@ -20,34 +19,19 @@ body {
 .container-outer {
   display: flex;
   flex-wrap: wrap;
-  /* flex-direction: column; */
-  /* border: 2px solid darkred; */
   padding-top: 0;
   width: 90%;
-  max-width: 1200px;
+  max-width: 1250px;
   margin: 0 auto;
 }
-
-/* .container-links {
-  border: 2px solid rebeccapurple;
-} */
 
 .container-links > ul {
   padding: 6rem 2rem;
 }
 
 .container-content {
-  /* border: 1px solid seagreen; */
-  border-left: 4px solid darkblue;
-  /* border-radius: 4px 0px 10px 0px; */
+  border-left: 4px solid ghostwhite;
   padding: 1rem 1rem;
-  /* margin-right: auto; */
-  /* margin: 0 auto;
-  border-radius: 8px;
-  padding: 1rem 2rem;
-  width: 96%;
-  max-width: 1200px;
-  background-color: var(--light-blue); */
 }
 
 h1, h2, h3, h4 {
@@ -57,17 +41,16 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-  color: gold;
-  font-size: 50px;
-  /* margin: 0; */
+  color: ghostwhite;
+  font-size: 46px;
 }
 
 h3 {
-  font-size: 24px;
+  font-size: 22px;
 }
 
 p {
-  font-size: 22px;
+  font-size: 20px;
 }
 
 ul {
@@ -77,7 +60,6 @@ ul {
 }
 
 li {
-  /* border: 1px solid silver; */
   padding: .25rem;
   font-size: 18px;
 }
@@ -90,7 +72,7 @@ a {
 
 a:hover {
   text-decoration: underline;
-  color: gold;
+  color: ghostwhite;
 }
 
 strong {
@@ -128,13 +110,22 @@ form > div > input {
 button[type=submit] {
   border: none;
   border-radius: 2px;
-  padding: .5rem 1rem;
+  padding: .4rem 1.2rem;
   background-color: lightskyblue;
   font-size: 18px;
 }
 
 button:hover {
   cursor: pointer;
+}
+
+select {
+  padding: .1rem;
+  font-size: 17px;
+}
+
+.hero {
+  color: lightskyblue;
 }
 
 #summary {
@@ -157,13 +148,13 @@ button:hover {
   display: flex;
   flex-direction: column;
   row-gap: .25rem;
-  border: 1px solid floralwhite;
+  border: 1px solid rgba(0, 0, 0, 0);
   border-radius: 4px;
   padding: 1rem;
 }
 
 .book-instance-list > li:hover {
-  background-color: darkblue;
+  border: 1px solid lightgray;
 }
 
 .book-instance-list > li span {
@@ -187,7 +178,7 @@ button:hover {
   color: darkred;
 }
 
-@media (min-width: 930px) {
+@media (min-width: 1250px) {
   .container-outer {
     padding-top: 8rem;
   }

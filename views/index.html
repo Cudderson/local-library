@@ -1,32 +1,32 @@
 {% extends 'layout.html' %} 
 
 {% block content %}
-<h1>{{ title }}</h1>
+  <h1>{{ title }}</h1>
 
-<p>Welcome to Local Library, an Express website.</p>
-<br>
+  <p class='hero'>Welcome to Local Library, a simple website built with Node/Express and MongoDB.</p>
+  <br>
 
-{% if error %}
-<p>Error retrieving dynamic content.</p>
-{% else %}
-<h3>Local Library has the following record counts:</h3>
+  {% if error %}
+    <p>Error retrieving dynamic content.</p>
+  {% else %}
+    <h3>Local Library has the following record counts:</h3>
 
-<ul>
-  <li>
-    <strong>Books: </strong>{{ data.book_count }}
-  </li>
-  <li>
-    <strong>Copies: </strong>{{ data.book_instance_count }}
-  </li>
-  <li>
-    <strong>Copies Available: </strong>{{ data.book_instance_available_count }}
-  </li>
-  <li>
-    <strong>Authors: </strong>{{ data.author_count }}
-  </li>
-  <li>
-    <strong>Genres: </strong>{{ data.genre_count }}
-  </li>
-</ul>
+  <ul>
+    <li>
+      <strong>Books: </strong>{{ data.book_count }}
+    </li>
+    <li>
+      <strong>Copies: </strong>{{ data.book_instance_count }}
+    </li>
+    <li>
+      <strong>Copies Available: </strong>{{ data.book_instance_available_count }}
+    </li>
+    <li>
+      <strong>Authors: </strong>{{ data.author_count }}
+    </li>
+    <li>
+      <strong>Genres: </strong>{{ data.genre_count }}
+    </li>
+  </ul>
 
 {% endif %} {% endblock content %}
