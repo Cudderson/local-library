@@ -10,7 +10,7 @@ var catalogRouter = require('./routes/catalog');
 var compression = require('compression');
 var helmet = require('helmet');
 
-const mongoDbConnectionString = require('./connect.js') || null; // imported for privacy
+// const mongoDbConnectionString = require('./connect.js') || null; // imported for privacy
 
 
 var app = express();
@@ -20,7 +20,7 @@ var mongoose = require('mongoose');
 
 // var mongoDB = mongoDbConnectionString;
 // replace with heroku env variable
-var mongoDB = process.env.MONGO_DB_URI || mongoDbConnectionString;
+var mongoDB = process.env.MONGO_DB_URI;
 
 mongoose.connect(mongoDB, { useNewUrlParser: true , useUnifiedTopology: true});
 var db = mongoose.connection;
