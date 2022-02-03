@@ -3,18 +3,28 @@
 {% block content %}
 
   <h1>{{ title }}</h1>
-  <ul>
+  <ul class='book-instance-list'>
     {% for val in bookinstance_list %}
       <li>
         <a href={{val.url}}>
           {{ val.book.title }} | {{ val.imprint }}
         </a>
         {% if val.status === 'Available' %}
-          <span class='available'>{{ val.status }}</span>
+          <div>
+            <span>Status:</span>
+            <span class='available'>{{ val.status }}</span>
+          </div>
+          
         {% elif val.status === 'Maintenance' %}
-          <span class='maintenance'>{{ val.status }}</span>
+          <div>
+            <span>Status:</span>
+            <span class='maintenance'>{{ val.status }}</span>
+          </div>
         {% else %}
-          <span class='unavailable'>{{ val.status }}</span>
+          <div>
+            <span>Status:</span>
+            <span class='unavailable'>{{ val.status }}</span>
+          </div>
         {% endif %}
         {% if val.status != 'Available' %}
           <span>Due Back: {{ val.due_back_formatted }}</span>

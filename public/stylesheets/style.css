@@ -99,6 +99,41 @@ strong {
   font-family: "Lora", serif;
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid green;
+}
+
+.book-instance-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: .5rem;
+  padding: .5rem;
+}
+
+.book-instance-list > li {
+  display: flex;
+  flex-direction: column;
+  row-gap: .25rem;
+  border: 1px solid floralwhite;
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+.book-instance-list > li:hover {
+  background-color: darkblue;
+}
+
+.book-instance-list > li span {
+  font-size: 16px;
+}
+
+.book-instance-list > li > a {
+  font-family: "Lora", serif;
+  font-weight: 600;
+}
+
 .available {
   color: lightgreen;
 }
