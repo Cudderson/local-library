@@ -6,49 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora&family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Roboto&display=swap" rel="stylesheet">
     <link rel='stylesheet' href='/stylesheets/style.css'>
     <link rel='stylesheet' href='/stylesheets/test.css'>
     <title>Local Library</title>
   </head>
   <body>
-    <div>
-      <ul>
-        <li>
-          <a href="/catalog">Home</a>
-        </li>
-        <li>
-          <a href="/catalog/books">All Books</a>
-        </li>
-        <li>
-          <a href="/catalog/authors">All Authors</a>
-        </li>
-        <li>
-          <a href="/catalog/genres">All Genres</a>
-        </li>
-        <li>
-          <a href="/catalog/bookinstances">All book-instances</a>
-        </li>
+    <div class="container-outer">
+      <div class="container-links">
+        <ul>
+          <li>
+            <a href="/catalog">Home</a>
+          </li>
+          <li>
+            <a href="/catalog/books">All Books</a>
+          </li>
+          <li>
+            <a href="/catalog/authors">All Authors</a>
+          </li>
+          <li>
+            <a href="/catalog/genres">All Genres</a>
+          </li>
+          <li>
+            <a href="/catalog/bookinstances">All book-instances</a>
+          </li>
 
-        <br />
+          <br />
 
-        <li>
-          <a href="/catalog/author/create">Create New Author</a>
-        </li>
-        <li>
-          <a href="/catalog/genre/create">Create New Genre</a>
-        </li>
-        <li>
-          <a href="/catalog/book/create">Create New Book</a>
-        </li>
-        <li>
-          <a href="/catalog/bookinstance/create">Create New Book Instance</a>
-        </li>
-      </ul>
-    </div>
-    <div class="content-container">
-      {% block content %}
-      {% endblock content %}
+          <li>
+            <a href="/catalog/author/create">Create New Author</a>
+          </li>
+          <li>
+            <a href="/catalog/genre/create">Create New Genre</a>
+          </li>
+          <li>
+            <a href="/catalog/book/create">Create New Book</a>
+          </li>
+          <li>
+            <a href="/catalog/bookinstance/create">Create New Book Instance</a>
+          </li>
+        </ul>
+      </div>
+      <div class="container-content">
+        {% block content %}
+        {% endblock content %}
+      </div>
     </div>
   </body>
 </html>
