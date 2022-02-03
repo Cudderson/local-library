@@ -15,9 +15,6 @@ const mongoDbConnectionString = require('./connect.js') || null; // imported for
 
 var app = express();
 
-// adds a subset of the available headers (that make sense for most sites)
-app.use(helmet());
-
 // set up monggose connection
 var mongoose = require('mongoose');
 
@@ -36,12 +33,15 @@ nunjucks.configure('views', {
   express: app
 });
 
-// compress all responses
-app.use(compression());
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+// adds a subset of the available headers (that make sense for most sites)
+app.use(helmet());
+// compress all routes
+app.use(compression());
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
