@@ -7,15 +7,23 @@ const nunjucks = require('nunjucks');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var catalogRouter = require('./routes/catalog');
+var compression = require('compression');
+var helmet = require('helmet');
 
-const mongoDbConnectionString = require('./connect.js'); // imported for privacy
+const mongoDbConnectionString = require('./connect.js') || null; // imported for privacy
 
 
 var app = express();
 
+// adds a subset of the available headers (that make sense for most sites)
+app.use(helmet());
+
 // set up monggose connection
 var mongoose = require('mongoose');
-var mongoDB = mongoDbConnectionString;
+
+// var mongoDB = mongoDbConnectionString;
+// replace with heroku env variable
+var mongoDB = process.env.MONGO_DB_URI || mongoDbConnectionString;
 
 mongoose.connect(mongoDB, { useNewUrlParser: true , useUnifiedTopology: true});
 var db = mongoose.connection;
@@ -28,6 +36,8 @@ nunjucks.configure('views', {
   express: app
 });
 
+// compress all responses
+app.use(compression());
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
