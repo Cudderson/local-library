@@ -8,12 +8,12 @@
     {{ author.lifespan }}
   </p>
 
-  <h4>Books</h4>
+  <h2>Books</h2>
   <ul>
     {% for book in author_books %}
       <li>
         <a href={{book.url}}>{{ book.title }}</a>
-        <p>{{ book.summary }}</p>
+        <p id='summary'>{{ book.summary }}</p>
       </li>
     {% else %}
       <li>This author has no books.</li>

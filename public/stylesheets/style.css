@@ -133,6 +133,15 @@ button[type=submit] {
   font-size: 18px;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
+#summary {
+  font-size: 17px;
+  max-width: 500px;
+}
+
 .footer-padding {
   height: 100px;
 }
