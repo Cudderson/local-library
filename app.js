@@ -20,7 +20,7 @@ var mongoose = require('mongoose');
 
 // var mongoDB = mongoDbConnectionString;
 // replace with heroku env variable
-var mongoDB = process.env.MONGO_DB_URI;
+var mongoDB = process.env.MONGODB_URI;
 
 mongoose.connect(mongoDB, { useNewUrlParser: true , useUnifiedTopology: true});
 var db = mongoose.connection;
